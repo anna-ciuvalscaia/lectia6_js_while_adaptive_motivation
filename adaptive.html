@@ -1,0 +1,74 @@
+<!--
+    aka - media query
+-->
+
+<script>
+// ON data
+const BREAK_POINT = 1100
+// --------------- x -------------------> window size
+//      mobile    1100      desktop
+
+//              560          980            1200
+// ------------- x ---------- x ------------ x ------------> window size
+//  extra small      small        medium         large
+
+// + size < 60 -error
+// + size > 3000 -error
+
+let extra_small = 60
+let smallW = 560
+let mediumW = 980
+let largeW = 1200
+
+let windowWidth =   innerWidth   // innerHeight
+let errorSize_big = 3000
+let errorSize_small = 60
+
+
+
+//DECISION / adaptive
+if ( windowWidth >= BREAK_POINT ) {
+    alert( "desktop "  + windowWidth + " px")}
+    else if ( windowWidth < BREAK_POINT && windowWidth > smallW){
+    alert( "tablet " + windowWidth + " px")
+    }
+    else {
+    alert( "mobile "  + windowWidth + " px" )
+    } 
+
+// Desktop size
+  if ( windowWidth >= mediumW && windowWidth < largeW) {
+    document.write ( 
+    ` <h1 style="text-align: center;">DESKTOP: medium</h1> <hr>
+    <p style="text-align: center;"><img  src="images/desktop.jpg"></p> ` )
+}
+    else if ( windowWidth >= largeW && windowWidth < errorSize_big) {
+        document.write ( 
+   ` <h1 style="text-align: center;">DESKTOP 4k: large</h1> <hr>
+   <p style="text-align: center;"><img  src="images/4k.jpg"></p> ` )
+    }
+    else if ( windowWidth >= errorSize_big) {
+        document.write ( 
+   ` <h1 style="text-align: center;">ERROR</h1> <hr>
+   <p style="text-align: center;"><img  src="images/error.png"></p> ` )}
+    else if ( windowWidth < mediumW && windowWidth >= smallW) {
+        document.write ( 
+   ` <h1 style="text-align: center;">TABLET: small</h1> <hr>
+   <p style="text-align: center;"><img  src="images/tablet.jpg"></p> ` )
+    }
+    else if ( windowWidth < smallW && windowWidth >= errorSize_small) {
+        document.write ( 
+   ` <h1 style="text-align: center;">MOBILE: Extra small</h1> <hr>
+   <p style="text-align: center;"><img  src="images/mobile.jpg"></p> ` )
+    }
+    else if ( windowWidth < errorSize_small) {
+        document.write ( 
+   ` <h1 style="text-align: center;">ERROR</h1> <hr>
+   <p style="text-align: center;"><img  src="images/error2.jpg"></p> ` )
+    }
+    
+   
+
+
+</script>
+
